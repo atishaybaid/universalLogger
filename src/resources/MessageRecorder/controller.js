@@ -9,7 +9,7 @@ export const recordError = async (req, res) => {
         if (!reqBody.errorMessage) {
             return res.status(400).send({ msg: 'Error Message is missing' })
         }
-        const { directoryName } = reqBody;
+        const { directoryName="web2Logs" } = reqBody;
 
         if (directoryName) {
             makeDirectory(`./log/${directoryName}`);
